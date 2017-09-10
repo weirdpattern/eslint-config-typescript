@@ -1,0 +1,47 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "sourceMap": true,
+    "removeComments": false,
+
+    "target": "es6",
+    "module": "es6",
+    "moduleResolution": "node",
+
+    "jsx": "preserve",
+
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+
+    "pretty": true,
+    "newLine": "LF",
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "preserveConstEnums": true,
+
+    "baseUrl": "./",
+    "paths": {
+      "*": ["typings/*"]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules",
+      "./typings"
+    ],
+
+    "lib": [
+      "es5",
+      "es6",
+      "es7",
+      "dom"
+    ]
+  },
+  "include": ["specs/samples/*"],
+  "exclude": ["node_modules"]
+}
