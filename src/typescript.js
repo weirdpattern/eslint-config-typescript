@@ -12,6 +12,9 @@ const utils = require('./utils');
 
 module.exports = {
   parser: 'typescript-eslint-parser',
+  parserOptions: {
+    sourceType: 'module'
+  },
   extends: ['eslint:recommended'],
   plugins: ['typescript'],
   rules: Object.assign({}, utils.getESLintConfig(), {
