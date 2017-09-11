@@ -8,18 +8,18 @@
 
 'use strict';
 
-const eslint = require('./eslint');
+const utils = require('./utils');
 
 module.exports = {
   parser: 'typescript-eslint-parser',
   extends: ['eslint:recommended'],
   plugins: ['typescript'],
-  rules: Object.assign({}, eslint, {
+  rules: Object.assign({}, utils.getESLintConfig(), {
     'typescript/no-namespace': [
       'error',
       {
-        allowDeclarations: true,
-      },
+        allowDeclarations: true
+      }
     ],
     'typescript/no-use-before-define': 'error',
     'typescript/interface-name-prefix': 'error',
@@ -40,9 +40,9 @@ module.exports = {
           'constructor',
           'public-method',
           'protected-method',
-          'private-method',
-        ],
-      },
-    ],
-  }),
+          'private-method'
+        ]
+      }
+    ]
+  })
 };

@@ -8,10 +8,16 @@
 
 'use strict';
 
-const eslint = require('../../src/eslint');
+const utils = require('../../src/utils');
 
 module.exports = {
   parser: 'typescript-eslint-parser',
+  parserOptions: {
+    ecmaVersion: 2015,
+    ecmaFeatures: {
+      jsx: true
+    }
+  },
   extends: ['eslint:recommended'],
-  rules: Object.assign({}, eslint),
+  rules: Object.assign({}, utils.getESLintConfig())
 };

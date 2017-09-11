@@ -5,7 +5,7 @@ const path = require('path');
 const childProcess = require('child_process');
 
 describe('config', () => {
-  it('samples does not causes errors without eslint-config-typescript/prettier', () => {
+  it('samples does not causes errors without eslint-config-typescript/react', () => {
     const result = childProcess.spawnSync(
       'npm',
       [
@@ -16,7 +16,7 @@ describe('config', () => {
         '--no-ignore',
         '--config',
         './specs/configs/base.js',
-        './specs/samples/prettier.ts'
+        './specs/samples/react.tsx'
       ],
       { encoding: 'utf8' }
     );
@@ -28,7 +28,7 @@ describe('config', () => {
     expect(output[0].messages.length).toBe(0);
   });
 
-  it('samples causes errors with eslint-config-typescript/prettier', () => {
+  it('samples causes errors with eslint-config-typescript/react', () => {
     const result = childProcess.spawnSync(
       'npm',
       [
@@ -38,8 +38,8 @@ describe('config', () => {
         '--',
         '--no-ignore',
         '--config',
-        './specs/configs/prettier.js',
-        './specs/samples/prettier.ts'
+        './specs/configs/react.js',
+        './specs/samples/react.tsx'
       ],
       { encoding: 'utf8' }
     );
@@ -48,21 +48,14 @@ describe('config', () => {
     );
 
     expect(output.length).toBe(1);
-    expect(output[0].messages.length).toBe(1);
+    expect(output[0].messages.length).toBe(3);
   });
 
   it('returns all rules', () => {
-    const config = require('../prettier');
+    const config = require('../react');
 
     expect(config).toBeDefined();
-    expect(config.extends).toContain('prettier');
-    expect(config.extends).toContain('prettier/react');
-    expect(config.plugins).toContain('prettier');
-    expect(config.rules).toBeDefined();
-    expect(config.rules['prettier/prettier']).toBeDefined();
-    expect(config.rules['prettier/prettier'][0]).toBe('error');
-    expect(config.rules['prettier/prettier'][1]).toMatchObject({
-      parser: 'typescript'
-    });
+    expect(config.extends).toContain('plugin:react/recommended');
+    expect(config.plugins).toContain('react');
   });
 });

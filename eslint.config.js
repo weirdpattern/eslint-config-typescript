@@ -11,10 +11,17 @@
 module.exports = {
   extends: ['eslint:recommended', 'prettier'],
   plugins: ['prettier', 'filenames'],
+  parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 2015,
+    ecmaFeatures: {
+      jsx: true
+    }
+  },
   env: {
     es6: true,
     node: true,
-    jest: true,
+    jest: true
   },
   rules: {
     semi: 'error',
@@ -24,20 +31,20 @@ module.exports = {
     'no-console': [
       'error',
       {
-        allow: ['warn', 'error'],
-      },
+        allow: ['warn', 'error']
+      }
     ],
     'valid-jsdoc': [
       'error',
       {
         preferType: {
           any: '*',
-          object: 'Object',
+          object: 'Object'
         },
         requireReturnType: true,
         requireParamDescription: true,
-        requireReturnDescription: true,
-      },
+        requireReturnDescription: true
+      }
     ],
     quotes: ['error', 'single', { avoidEscape: true }],
     'jsx-quotes': ['error', 'prefer-single'],
@@ -51,8 +58,8 @@ module.exports = {
         bracketSpacing: true,
         jsxBracketSameLine: true,
         printWidth: 80,
-        parser: 'typescript',
-      },
-    ],
-  },
+        parser: 'typescript'
+      }
+    ]
+  }
 };

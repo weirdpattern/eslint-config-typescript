@@ -9,10 +9,6 @@
 'use strict';
 
 module.exports = {
-  semi: true,
-  tabWidth: 2,
-  singleQuote: true,
-  bracketSpacing: true,
-  jsxBracketSameLine: true,
-  printWidth: 80
+  extends: ['plugin:react/recommended'],
+  plugins: ['react']
 };

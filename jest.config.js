@@ -12,7 +12,7 @@ module.exports = {
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
   testMatch: [
     '<rootDir>/specs/*[.-][Ss]pec[s]?.{j,t}s{,x}',
-    '<rootDir>/specs/**/*[.-][Ss]pec[s]?.{j,t}s{,x}',
+    '<rootDir>/specs/**/*[.-][Ss]pec[s]?.{j,t}s{,x}'
   ],
   rootDir: '.',
   verbose: false,
@@ -20,10 +20,11 @@ module.exports = {
   resetModules: true,
   collectCoverage: false,
   collectCoverageFrom: [
-    '**/*.{j,t}s{,x}',
+    '{index,prettier,react}.{j,t}s{,x}',
+    'src/*.{j,t}s{,x}',
     '!**/*.min.js',
     '!**/static/**',
     '!**/specs/**',
-    '!**/node_modules/**',
-  ],
+    '!**/node_modules/**'
+  ]
 };

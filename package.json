@@ -10,6 +10,7 @@
     "url": "https://www.github.com/weirdpattern/eslint-config-typescript.git"
   },
   "files": [
+    "src/",
     "index.js",
     "prettier.js"
   ],
@@ -23,26 +24,30 @@
     "cosmiconfig": "^2.2.2"
   },
   "devDependencies": {
+    "@types/node": "^8.0.28",
+    "create-react-class": "^15.6.0",
     "eslint": "^4.6.1",
     "eslint-config-prettier": "^2.4.0",
     "eslint-plugin-filenames": "^1.2.0",
+    "eslint-plugin-react": "^7.3.0",
     "eslint-plugin-prettier": "^2.2.0",
     "eslint-plugin-typescript": "^0.7.0",
     "husky": "^0.14.3",
     "jest": "^21.0.2",
     "lint-staged": "^4.1.3",
     "prettier": "^1.6.1",
-    "typescript": "^2.4.2",
-    "typescript-eslint-parser": "^7.0.0"
+    "typescript": "^2.5.2",
+    "typescript-eslint-parser": "^8.0.0"
   },
   "peerDependencies": {
-    "eslint": ">=3.14.1",
-    "eslint-config-prettier": ">=2.4.0",
-    "eslint-plugin-prettier": ">=2.2.0",
-    "eslint-plugin-typescript": ">=0.7.0",
-    "prettier": ">=1.6.1",
-    "typescript": ">=2.4.2",
-    "typescript-eslint-parser": ">=7.0.0"
+    "eslint": "*",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-prettier": "*",
+    "eslint-plugin-react": "*",
+    "eslint-plugin-typescript": "*",
+    "prettier": "*",
+    "typescript": "*",
+    "typescript-eslint-parser": "*"
   },
   "scripts": {
     "format": "npm run format:root && npm run format:src && npm run format:specs",
