@@ -15,6 +15,9 @@ module.exports = {
   parserOptions: {
     sourceType: 'module'
   },
+  env: {
+    es6: true
+  },
   extends: ['eslint:recommended'],
   plugins: ['typescript'],
   rules: Object.assign({}, utils.getESLintConfig(), {
