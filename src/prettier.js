@@ -13,6 +13,11 @@ const utils = require('./utils');
 module.exports = {
   extends: ['prettier', 'prettier/react'],
   plugins: ['prettier'],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    }
+  },
   rules: Object.assign(
     {},
     {
