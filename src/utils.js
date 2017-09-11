@@ -8,8 +8,6 @@
 
 'use strict';
 
-const config = require('cosmiconfig');
-
 module.exports = {
   /**
    * Gets the ESLint overridden eslint:recommended + others rules.

@@ -2,9 +2,8 @@
   "license": "MIT",
   "version": "1.0.0",
   "name": "eslint-config-typescript",
-  "description": "",
+  "description": "An opinionated set of ESLint rules for TypeScript projects",
   "author": "Patricio Trevino <patricio@weirdpattern.com>",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "https://www.github.com/weirdpattern/eslint-config-typescript.git"
@@ -12,17 +11,17 @@
   "files": [
     "src/",
     "index.js",
-    "prettier.js"
+    "prettier.js",
+    "react.js"
   ],
   "keywords": [
     "eslint",
     "config",
     "eslintconfig",
-    "typescript"
+    "typescript",
+    "prettier",
+    "react"
   ],
-  "dependencies": {
-    "cosmiconfig": "^2.2.2"
-  },
   "devDependencies": {
     "@types/node": "^8.0.28",
     "create-react-class": "^15.6.0",
