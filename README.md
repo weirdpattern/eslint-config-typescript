@@ -31,6 +31,7 @@ A few ESLint plugins are supported as well:
 ```
 
 ## Example configuration
+Using default prettier configurations:
 ```json
 {
   "extends": [
@@ -38,19 +39,51 @@ A few ESLint plugins are supported as well:
     "typescript/react",
     "typescript/prettier"
   ],
-  "plugins": [
-    "typescript"
-  ],
-  "parserOptions": {
-    "ecmaVersion": 2016,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "env": {
-    "es6": true,
+  "plugins": ["filenames", "jest"],
+  "env": {    
+    "jest": true,
     "node": true
+  },
+  "rules": {
+    "filenames/no-index": "error",
+    "filenames/match-exported": ["error", "kebab"],
+    "jest/no-disabled-tests": "error",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/valid-expect": "error"
+  }
+}
+```
+
+Using specific prettier configurations:
+```json
+{
+  "extends": [
+    "typescript",
+    "typescript/react",
+    "typescript/prettier"
+  ],
+  "plugins": ["filenames", "jest"],
+  "env": {    
+    "jest": true,
+    "node": true
+  },
+  "rules": {
+    "filenames/no-index": "error",
+    "filenames/match-exported": ["error", "kebab"],
+    "jest/no-disabled-tests": "error",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/valid-expect": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": false,
+        "tabWidth": 4,
+        "singleQuote": true,
+        "parser": "typescript"
+      }
+    ]
   }
 }
 ```

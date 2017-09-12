@@ -6,13 +6,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const utils = require('./utils');
+const utils = require("./utils");
 
 module.exports = {
-  extends: ['prettier', 'prettier/react'],
-  plugins: ['prettier'],
+  extends: ["prettier", "prettier/react"],
+  plugins: ["prettier"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
@@ -21,9 +21,9 @@ module.exports = {
   rules: Object.assign(
     {},
     {
-      'prettier/prettier': [
-        'error',
-        Object.assign({}, { parser: 'typescript' })
+      "prettier/prettier": [
+        "error",
+        Object.assign({}, { parser: "typescript" })
       ]
     }
   )

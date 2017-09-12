@@ -6,25 +6,25 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
 module.exports = {
-  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  moduleFileExtensions: ["js", "jsx", "ts", "tsx"],
   testMatch: [
-    '<rootDir>/specs/*[.-][Ss]pec[s]?.{j,t}s{,x}',
-    '<rootDir>/specs/**/*[.-][Ss]pec[s]?.{j,t}s{,x}'
+    "<rootDir>/specs/*[.-][Ss]pec[s]?.{j,t}s{,x}",
+    "<rootDir>/specs/**/*[.-][Ss]pec[s]?.{j,t}s{,x}"
   ],
-  rootDir: '.',
+  rootDir: ".",
   verbose: false,
   resetMocks: true,
   resetModules: true,
   collectCoverage: false,
   collectCoverageFrom: [
-    '{index,prettier,react}.{j,t}s{,x}',
-    'src/*.{j,t}s{,x}',
-    '!**/*.min.js',
-    '!**/static/**',
-    '!**/specs/**',
-    '!**/node_modules/**'
+    "{index,prettier,react}.{j,t}s{,x}",
+    "src/*.{j,t}s{,x}",
+    "!**/*.min.js",
+    "!**/static/**",
+    "!**/specs/**",
+    "!**/node_modules/**"
   ]
 };

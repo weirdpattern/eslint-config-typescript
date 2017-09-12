@@ -6,13 +6,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
 module.exports = {
-  extends: ['eslint:recommended', 'prettier'],
-  plugins: ['prettier', 'filenames'],
+  extends: ["eslint:recommended", "prettier"],
+  plugins: ["prettier", "filenames"],
   parserOptions: {
-    sourceType: 'module',
+    sourceType: "module",
     ecmaVersion: 2015,
     ecmaFeatures: {
       jsx: true
@@ -24,41 +24,35 @@ module.exports = {
     jest: true
   },
   rules: {
-    semi: 'error',
-    'no-undef': 'off',
-    'no-unused-vars': 'off',
-    'require-jsdoc': 'error',
-    'no-console': [
-      'error',
+    semi: "error",
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "require-jsdoc": "error",
+    "no-console": [
+      "error",
       {
-        allow: ['warn', 'error']
+        allow: ["warn", "error"]
       }
     ],
-    'valid-jsdoc': [
-      'error',
+    "valid-jsdoc": [
+      "error",
       {
         preferType: {
-          any: '*',
-          object: 'Object'
+          any: "*",
+          object: "Object"
         },
         requireReturnType: true,
         requireParamDescription: true,
         requireReturnDescription: true
       }
     ],
-    quotes: ['error', 'single', { avoidEscape: true }],
-    'jsx-quotes': ['error', 'prefer-single'],
-    'filenames/match-exported': ['error', 'kebab'],
-    'prettier/prettier': [
-      'error',
+    quotes: ["error", "double", { avoidEscape: true }],
+    "jsx-quotes": ["error", "prefer-single"],
+    "filenames/match-exported": ["error", "kebab"],
+    "prettier/prettier": [
+      "error",
       {
-        semi: true,
-        tabWidth: 2,
-        singleQuote: true,
-        bracketSpacing: true,
-        jsxBracketSameLine: true,
-        printWidth: 80,
-        parser: 'typescript'
+        parser: "typescript"
       }
     ]
   }

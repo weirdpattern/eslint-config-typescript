@@ -6,18 +6,18 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const utils = require('../../src/utils');
+const utils = require("../../src/utils");
 
 module.exports = {
-  parser: 'typescript-eslint-parser',
+  parser: "typescript-eslint-parser",
   parserOptions: {
     ecmaVersion: 2015,
     ecmaFeatures: {
       jsx: true
     }
   },
-  extends: ['eslint:recommended'],
+  extends: ["eslint:recommended"],
   rules: Object.assign({}, utils.getESLintConfig())
 };

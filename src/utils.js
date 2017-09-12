@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
 module.exports = {
   /**
@@ -16,33 +16,33 @@ module.exports = {
    */
   getESLintConfig() {
     return {
-      semi: 'error',
-      'no-undef': 'off',
-      'no-unused-vars': 'off',
-      'require-jsdoc': 'error',
-      'no-console': [
-        'error',
+      semi: "error",
+      "no-undef": "off",
+      "no-unused-vars": "off",
+      "require-jsdoc": "error",
+      "no-console": [
+        "error",
         {
-          allow: ['warn', 'error']
+          allow: ["warn", "error"]
         }
       ],
-      'valid-jsdoc': [
-        'error',
+      "valid-jsdoc": [
+        "error",
         {
           preferType: {
-            any: '*',
-            Boolean: 'boolean',
-            Number: 'number',
-            Object: 'object',
-            String: 'string',
-            return: 'returns'
+            any: "*",
+            Boolean: "boolean",
+            Number: "number",
+            Object: "object",
+            String: "string",
+            return: "returns"
           },
           requireReturnType: true,
           requireParamDescription: true,
           requireReturnDescription: true
         }
       ],
-      quotes: ['error', 'single', { avoidEscape: true }]
+      quotes: ["error", "single", { avoidEscape: true }]
     };
   }
 };

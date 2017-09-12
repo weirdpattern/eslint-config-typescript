@@ -6,47 +6,44 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const utils = require('./utils');
+const utils = require("./utils");
 
 module.exports = {
-  parser: 'typescript-eslint-parser',
+  parser: "typescript-eslint-parser",
   parserOptions: {
-    sourceType: 'module'
+    sourceType: "module"
   },
-  env: {
-    es6: true
-  },
-  extends: ['eslint:recommended'],
-  plugins: ['typescript'],
+  extends: ["eslint:recommended"],
+  plugins: ["typescript"],
   rules: Object.assign({}, utils.getESLintConfig(), {
-    'typescript/no-namespace': [
-      'error',
+    "typescript/no-namespace": [
+      "error",
       {
         allowDeclarations: true
       }
     ],
-    'typescript/no-use-before-define': 'error',
-    'typescript/interface-name-prefix': 'error',
-    'typescript/member-delimiter-style': 'error',
-    'typescript/type-annotation-spacing': 'error',
-    'typescript/no-triple-slash-reference': 'error',
-    'typescript/adjacent-overload-signatures': 'error',
-    'typescript/explicit-member-accessibility': 'error',
-    'typescript/no-angle-bracket-type-assertion': 'error',
-    'typescript/member-ordering': [
-      'error',
+    "typescript/no-use-before-define": "error",
+    "typescript/interface-name-prefix": "error",
+    "typescript/member-delimiter-style": "error",
+    "typescript/type-annotation-spacing": "error",
+    "typescript/no-triple-slash-reference": "error",
+    "typescript/adjacent-overload-signatures": "error",
+    "typescript/explicit-member-accessibility": "error",
+    "typescript/no-angle-bracket-type-assertion": "error",
+    "typescript/member-ordering": [
+      "error",
       {
         default: [
-          'static-field',
-          'private-field',
-          'protected-field',
-          'public-field',
-          'constructor',
-          'public-method',
-          'protected-method',
-          'private-method'
+          "static-field",
+          "private-field",
+          "protected-field",
+          "public-field",
+          "constructor",
+          "public-method",
+          "protected-method",
+          "private-method"
         ]
       }
     ]

@@ -6,13 +6,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
 module.exports = {
-  semi: true,
-  tabWidth: 2,
-  singleQuote: true,
-  bracketSpacing: true,
-  jsxBracketSameLine: true,
-  printWidth: 80
+  parser: "typescript"
 };

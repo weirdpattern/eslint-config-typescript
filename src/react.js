@@ -6,11 +6,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
 module.exports = {
-  extends: ['plugin:react/recommended'],
-  plugins: ['react'],
+  extends: ["plugin:react/recommended"],
+  plugins: ["react"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
