@@ -39,7 +39,11 @@ module.exports = {
       {
         preferType: {
           any: "*",
-          object: "Object"
+          Boolean: "boolean",
+          Number: "number",
+          Object: "object",
+          String: "string",
+          return: "returns"
         },
         requireReturnType: true,
         requireParamDescription: true,
@@ -49,11 +53,6 @@ module.exports = {
     quotes: ["error", "double", { avoidEscape: true }],
     "jsx-quotes": ["error", "prefer-single"],
     "filenames/match-exported": ["error", "kebab"],
-    "prettier/prettier": [
-      "error",
-      {
-        parser: "typescript"
-      }
-    ]
+    "prettier/prettier": "error"
   }
 };

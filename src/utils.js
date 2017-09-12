@@ -11,7 +11,7 @@
 module.exports = {
   /**
    * Gets the ESLint overridden eslint:recommended + others rules.
-   * @returns {Object}
+   * @returns {object}
    *    The ESLint overridden eslint:recommended + others rules.
    */
   getESLintConfig() {
