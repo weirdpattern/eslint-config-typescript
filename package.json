@@ -1,6 +1,6 @@
 {
   "license": "MIT",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "name": "eslint-config-typescript",
   "description": "An opinionated set of ESLint rules for TypeScript projects",
   "author": "Patricio Trevino <patricio@weirdpattern.com>",
