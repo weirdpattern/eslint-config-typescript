@@ -1,7 +1,5 @@
 "use strict";
 
-const fs = require("fs");
-const path = require("path");
 const childProcess = require("child_process");
 
 describe("config", () => {
@@ -14,6 +12,7 @@ describe("config", () => {
         "--silent",
         "--",
         "--no-ignore",
+        "--no-eslintrc",
         "--config",
         "./specs/configs/base.js",
         "./specs/samples/prettier.ts"
@@ -37,6 +36,7 @@ describe("config", () => {
         "--silent",
         "--",
         "--no-ignore",
+        "--no-eslintrc",
         "--config",
         "./specs/configs/prettier.js",
         "./specs/samples/prettier.ts"

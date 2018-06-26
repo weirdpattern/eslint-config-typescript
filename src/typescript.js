@@ -32,6 +32,25 @@ module.exports = {
     "typescript/adjacent-overload-signatures": "error",
     "typescript/explicit-member-accessibility": "error",
     "typescript/no-angle-bracket-type-assertion": "error",
+    "typescript/class-name-casing": "error",
+    "typescript/no-array-constructor": "error",
+    "typescript/no-non-null-assertion": "error",
+    "typescript/no-parameter-properties": "error",
+    "typescript/no-var-requires": "error",
+    "typescript/prefer-namespace-keyword": "error",
+    "typescript/no-inferrable-types": [
+      "error",
+      {
+        ignoreProperties: true,
+        ignoreParameters: true
+      }
+    ],
+    "typescript/explicit-function-return-type": [
+      "error",
+      {
+        allowExpressions: true
+      }
+    ],
     "typescript/member-ordering": [
       "error",
       {

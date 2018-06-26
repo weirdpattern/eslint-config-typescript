@@ -14,6 +14,7 @@ describe("config", () => {
         "--silent",
         "--",
         "--no-ignore",
+        "--no-eslintrc",
         "--config",
         "./specs/configs/base.js",
         "./specs/samples/typescript.ts"
@@ -37,6 +38,7 @@ describe("config", () => {
         "--silent",
         "--",
         "--no-ignore",
+        "--no-eslintrc",
         "--config",
         "./specs/configs/typescript.js",
         "./specs/samples/typescript.ts"
