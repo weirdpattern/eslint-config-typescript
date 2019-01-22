@@ -1,0 +1,10 @@
+**/*
+!src
+!index.js
+!react.js
+!prettier.js
+!prettier-react.js
+!package.json
+!CHANGELOG.md
+!README.md
+!LICENSE

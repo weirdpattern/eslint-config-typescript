@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017, WeirdPattern
+ * Copyright (c) 2019, Patricio Trevino
  * All rights reserved.
  *
  * This source code is licensed under the MIT-style license found in the
@@ -8,10 +8,11 @@
 
 "use strict";
 
-const utils = require("../../src/utils");
-
 module.exports = {
-  parser: "typescript-eslint-parser",
+  parser: "@typescript-eslint/parser",
+  env: {
+    node: true
+  },
   parserOptions: {
     ecmaVersion: 2015,
     ecmaFeatures: {
@@ -19,5 +20,7 @@ module.exports = {
     }
   },
   extends: ["eslint:recommended"],
-  rules: Object.assign({}, utils.getESLintConfig())
+  rules: {
+    "no-unused-vars": "off"
+  }
 };
