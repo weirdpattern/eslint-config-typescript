@@ -31,7 +31,7 @@ A few ESLint plugins are supported as well:
 }
 ```
 
-Note: `typescript/prettier-react` will automatically import `typescript\prettier`.
+Note: `typescript/prettier-react` will automatically import `typescript/prettier`.
 
 ## Example configuration
 Using default prettier configurations:

@@ -1,3 +1,2 @@
-/specs/samples/**
-/coverage/**
-/node_modules/**
+/specs/samples/
+/coverage/
