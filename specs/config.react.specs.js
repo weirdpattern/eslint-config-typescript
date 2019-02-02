@@ -27,6 +27,7 @@ describe("config", () => {
       ],
       { encoding: "utf8" }
     );
+
     const output = JSON.parse(
       result.stdout.substring(result.stdout.indexOf("["))
     );
@@ -51,6 +52,7 @@ describe("config", () => {
       ],
       { encoding: "utf8" }
     );
+
     const output = JSON.parse(
       result.stdout.substring(result.stdout.indexOf("["))
     );

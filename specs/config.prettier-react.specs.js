@@ -27,6 +27,7 @@ describe("config", () => {
       ],
       { encoding: "utf8" }
     );
+
     const output = JSON.parse(
       result.stdout.substring(result.stdout.indexOf("["))
     );
@@ -51,12 +52,13 @@ describe("config", () => {
       ],
       { encoding: "utf8" }
     );
+
     const output = JSON.parse(
       result.stdout.substring(result.stdout.indexOf("["))
     );
 
     expect(output.length).toBe(1);
-    expect(output[0].messages.length).toBe(1);
+    expect(output[0].messages.length).toBeGreaterThan(0);
     expect(output[0].messages[0].message).toBe(
       "Replace `'create-react-class'` with `\"create-react-class\"`"
     );
@@ -67,7 +69,7 @@ describe("config", () => {
 
     expect(config).toBeDefined();
     expect(config.extends).toContain("plugin:prettier/recommended");
-    expect(config.extends).toContain("prettier/typescript");
+    expect(config.extends).toContain("prettier/@typescript-eslint");
     expect(config.extends).toContain("prettier/react");
   });
 });
