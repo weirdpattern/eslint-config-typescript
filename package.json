@@ -1,67 +1,64 @@
 {
   "license": "MIT",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "name": "eslint-config-typescript",
-  "description": "An opinionated set of ESLint rules for TypeScript projects",
+  "description": "A base set of recommended ESLint rules for TypeScript projects",
   "author": "Patricio Trevino <patricio@weirdpattern.com>",
   "repository": {
     "type": "git",
     "url": "https://www.github.com/weirdpattern/eslint-config-typescript.git"
   },
-  "files": [
-    "src/",
-    "index.js",
-    "prettier.js",
-    "react.js"
-  ],
   "keywords": [
     "eslint",
     "config",
     "eslintconfig",
+    "eslint-config",
     "typescript",
     "prettier",
     "react"
   ],
+  "files": [
+    "src/",
+    "index.js",
+    "prettier.js",
+    "prettier-react.js",
+    "react.js"
+  ],
   "devDependencies": {
-    "@types/node": "^10.3.6",
+    "@types/node": "^10.12.21",
+    "@typescript-eslint/eslint-plugin": "^1.2.0",
+    "@typescript-eslint/parser": "^1.2.0",
     "create-react-class": "^15.6.3",
-    "eslint": "^5.0.0",
-    "eslint-config-prettier": "^2.9.0",
+    "cross-spawn": "^6.0.5",
+    "eslint": "^5.13.0",
+    "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-filenames": "^1.3.2",
-    "eslint-plugin-prettier": "^2.6.1",
-    "eslint-plugin-react": "^7.10.0",
-    "eslint-plugin-typescript": "^0.12.0",
-    "husky": "^0.14.3",
-    "jest": "^23.2.0",
-    "lint-staged": "^7.2.0",
-    "prettier": "^1.13.6",
-    "typescript": "^2.9.2",
-    "typescript-eslint-parser": "^16.0.0"
+    "eslint-plugin-jsdoc": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "husky": "^1.3.1",
+    "jest": "^24.0.0",
+    "lint-staged": "^8.1.2",
+    "prettier": "^1.16.3",
+    "typescript": "^3.2.1"
   },
   "peerDependencies": {
-    "eslint": "*",
-    "eslint-config-prettier": "*",
-    "eslint-plugin-prettier": "*",
-    "eslint-plugin-react": "*",
-    "eslint-plugin-typescript": "*",
-    "prettier": "*",
-    "typescript": "*",
-    "typescript-eslint-parser": "*"
+    "@typescript-eslint/eslint-plugin": ">=1.0.0",
+    "@typescript-eslint/parser": ">=1.0.0",
+    "eslint": ">=5.0.0",
+    "typescript": ">=3.2.1"
   },
   "scripts": {
-    "format": "npm run format:root && npm run format:src && npm run format:specs",
-    "format:root": "prettier --write ./*.js",
-    "format:src": "prettier --write ./src/{,**}/*.js",
-    "format:specs": "prettier --write ./specs/{,**}/*.js",
-    "lint": "npm run lint:root && npm run lint:src && npm run lint:specs",
-    "lint:root": "eslint ./*.js",
-    "lint:src": "eslint ./src/{,**}/*.js",
-    "lint:specs": "eslint ./specs/{,**}/*.js",
+    "lint": "eslint .",
     "test": "jest",
-    "test:verbose": "jest --verbose",
     "test:coverage": "jest --coverage",
     "test:spec": "eslint --format json",
-    "precommit": "lint-staged && npm test"
+    "test:verbose": "jest --verbose"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm test"
+    }
   },
   "lint-staged": {
     "*.js{,x}": [
@@ -70,8 +67,8 @@
     ]
   },
   "eslintConfig": {
-    "extends": ["eslint:recommended", "prettier"],
-    "plugins": ["prettier", "filenames"],
+    "extends": ["eslint:recommended", "plugin:jsdoc/recommended", "prettier"],
+    "plugins": ["prettier", "filenames", "jsdoc"],
     "parserOptions": {
       "sourceType": "module",
       "ecmaVersion": 2015,
@@ -84,35 +81,16 @@
       "node": true,
       "jest": true
     },
+    "settings": {
+      "jsdoc": {
+        "allowOverrideWithoutParam": true,
+        "allowImplementsWithoutParam": true,
+        "allowAugmentsExtendsWithoutParam": true
+      }
+    },
     "rules": {
       "semi": "error",
-      "no-undef": "off",
-      "no-unused-vars": "off",
-      "require-jsdoc": "error",
-      "no-console": [
-        "error",
-        {
-          "allow": ["warn", "error"]
-        }
-      ],
-      "valid-jsdoc": [
-        "error",
-        {
-          "preferType": {
-            "any": "*",
-            "Boolean": "boolean",
-            "Number": "number",
-            "Object": "object",
-            "String": "string",
-            "return": "returns"
-          },
-          "requireReturnType": true,
-          "requireParamDescription": true,
-          "requireReturnDescription": true
-        }
-      ],
       "quotes": ["error", "double", { "avoidEscape": true }],
-      "jsx-quotes": ["error", "prefer-single"],
       "filenames/match-exported": ["error", "kebab"],
       "prettier/prettier": "error"
     }
@@ -131,7 +109,7 @@
     "resetModules": true,
     "collectCoverage": false,
     "collectCoverageFrom": [
-      "{index,prettier,react}.{j,t}s{,x}",
+      "{index,prettier,prettier-react,react}.{j,t}s{,x}",
       "src/*.{j,t}s{,x}",
       "!**/*.min.js",
       "!**/static/**",

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017, WeirdPattern
+ * Copyright (c) 2019, Patricio Trevino
  * All rights reserved.
  *
  * This source code is licensed under the MIT-style license found in the
@@ -8,4 +8,15 @@
 
 "use strict";
 
-module.exports = require("../../react");
+module.exports = Object.assign({}, require("../../react"), {
+  parser: "@typescript-eslint/parser",
+  env: {
+    node: true
+  },
+  parserOptions: {
+    ecmaVersion: 2015,
+    ecmaFeatures: {
+      jsx: true
+    }
+  }
+});

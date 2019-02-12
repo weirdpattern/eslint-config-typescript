@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017, WeirdPattern
+ * Copyright (c) 2019, Patricio Trevino
  * All rights reserved.
  *
  * This source code is licensed under the MIT-style license found in the
@@ -8,23 +8,6 @@
 
 "use strict";
 
-const utils = require("./utils");
-
 module.exports = {
-  extends: ["prettier", "prettier/react"],
-  plugins: ["prettier"],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    }
-  },
-  rules: Object.assign(
-    {},
-    {
-      "prettier/prettier": [
-        "error",
-        Object.assign({}, { parser: "typescript" })
-      ]
-    }
-  )
+  extends: ["plugin:prettier/recommended", "prettier/@typescript-eslint"]
 };

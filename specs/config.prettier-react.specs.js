@@ -11,7 +11,7 @@
 const spawn = require("cross-spawn");
 
 describe("config", () => {
-  it("samples does not throw errors without eslint-config-typescript", () => {
+  it("samples does not throw errors without eslint-config-typescript/prettier-react", () => {
     const result = spawn.sync(
       "npm",
       [
@@ -23,7 +23,7 @@ describe("config", () => {
         "--no-eslintrc",
         "--config",
         "./specs/configs/base.js",
-        "./specs/samples/typescript.ts"
+        "./specs/samples/react.tsx"
       ],
       { encoding: "utf8" }
     );
@@ -36,7 +36,7 @@ describe("config", () => {
     expect(output[0].messages.length).toBe(0);
   });
 
-  it("samples throws errors with eslint-config-typescript", () => {
+  it("samples throws errors with eslint-config-typescript/prettier-react", () => {
     const result = spawn.sync(
       "npm",
       [
@@ -47,8 +47,8 @@ describe("config", () => {
         "--no-ignore",
         "--no-eslintrc",
         "--config",
-        "./specs/configs/typescript.js",
-        "./specs/samples/typescript.ts"
+        "./specs/configs/prettier-react.js",
+        "./specs/samples/react.tsx"
       ],
       { encoding: "utf8" }
     );
@@ -58,20 +58,18 @@ describe("config", () => {
     );
 
     expect(output.length).toBe(1);
-    expect(output[0].messages.length).toBe(2);
-    expect(output[0].messages[0].ruleId).toBe(
-      "@typescript-eslint/no-unused-vars"
-    );
-    expect(output[0].messages[1].ruleId).toBe(
-      "@typescript-eslint/type-annotation-spacing"
+    expect(output[0].messages.length).toBeGreaterThan(0);
+    expect(output[0].messages[0].message).toBe(
+      "Replace `'create-react-class'` with `\"create-react-class\"`"
     );
   });
 
   it("returns configuration", () => {
-    const config = require("../index");
+    const config = require("../prettier-react");
 
     expect(config).toBeDefined();
-    expect(config.extends).toContain("eslint:recommended");
-    expect(config.extends).toContain("plugin:@typescript-eslint/recommended");
+    expect(config.extends).toContain("plugin:prettier/recommended");
+    expect(config.extends).toContain("prettier/@typescript-eslint");
+    expect(config.extends).toContain("prettier/react");
   });
 });

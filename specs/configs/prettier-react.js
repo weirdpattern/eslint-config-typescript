@@ -8,12 +8,15 @@
 
 "use strict";
 
-module.exports = Object.assign({}, require("../../prettier"), {
+module.exports = Object.assign({}, require("../../prettier-react"), {
   parser: "@typescript-eslint/parser",
   env: {
     node: true
   },
   parserOptions: {
-    ecmaVersion: 2015
+    ecmaVersion: 2015,
+    ecmaFeatures: {
+      jsx: true
+    }
   }
 });

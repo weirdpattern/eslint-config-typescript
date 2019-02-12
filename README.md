@@ -26,9 +26,12 @@ A few ESLint plugins are supported as well:
     "typescript",
     "typescript/react",
     "typescript/prettier"
+    "typescript/prettier-react"
   ]
 }
 ```
+
+Note: `typescript/prettier-react` will automatically import `typescript/prettier`.
 
 ## Example configuration
 Using default prettier configurations:
@@ -36,8 +39,7 @@ Using default prettier configurations:
 {
   "extends": [
     "typescript",
-    "typescript/react",
-    "typescript/prettier"
+    "typescript/prettier"    
   ],
   "plugins": ["filenames", "jest"],
   "env": {    
@@ -55,13 +57,13 @@ Using default prettier configurations:
 }
 ```
 
-Using specific prettier configurations:
+Using specific react configurations:
 ```json
 {
   "extends": [
     "typescript",
     "typescript/react",
-    "typescript/prettier"
+    "typescript/prettier-react"
   ],
   "plugins": ["filenames", "jest"],
   "env": {    
@@ -80,8 +82,7 @@ Using specific prettier configurations:
       {
         "semi": false,
         "tabWidth": 4,
-        "singleQuote": true,
-        "parser": "typescript"
+        "singleQuote": true
       }
     ]
   }

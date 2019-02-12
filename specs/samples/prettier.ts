@@ -1,4 +1,4 @@
-// prettiers wants double quote
-const variable: any = {
+// prettier wants double quote
+const prettierVariable: any = {
   property: 'one'
-};
+}

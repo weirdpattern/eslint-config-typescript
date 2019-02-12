@@ -6,6 +6,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+/* eslint-disable filenames/match-exported */
+
 "use strict";
 
-module.exports = require("./src/prettier");
+const configuration = require("./src/prettier");
+configuration.extends.push("prettier/react");
+
+module.exports = configuration;
+
+/* eslint-enable filenames/match-exported */

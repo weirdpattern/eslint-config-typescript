@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017, WeirdPattern
+ * Copyright (c) 2019, Patricio Trevino
  * All rights reserved.
  *
  * This source code is licensed under the MIT-style license found in the
@@ -9,11 +9,5 @@
 "use strict";
 
 module.exports = {
-  extends: ["plugin:react/recommended"],
-  plugins: ["react"],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    }
-  }
+  extends: ["plugin:react/recommended"]
 };
