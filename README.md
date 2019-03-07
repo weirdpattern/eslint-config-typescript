@@ -25,7 +25,7 @@ A few ESLint plugins are supported as well:
   "extends": [
     "typescript",
     "typescript/react",
-    "typescript/prettier"
+    "typescript/prettier",
     "typescript/prettier-react"
   ]
 }
