@@ -69,7 +69,23 @@ describe("config", () => {
     const config = require("../prettier");
 
     expect(config).toBeDefined();
-    expect(config.extends).toContain("plugin:prettier/recommended");
-    expect(config.extends).toContain("prettier/@typescript-eslint");
+    expect(config).toMatchInlineSnapshot(`
+      Object {
+        "extends": Array [
+          "plugin:prettier/recommended",
+        ],
+        "overrides": Array [
+          Object {
+            "extends": Array [
+              "prettier/@typescript-eslint",
+            ],
+            "files": Array [
+              "*.ts",
+              "*.tsx",
+            ],
+          },
+        ],
+      }
+    `);
   });
 });

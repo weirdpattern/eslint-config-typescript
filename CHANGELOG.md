@@ -1,3 +1,12 @@
+# v3.0.0
+[link](https://github.com/weirdpattern/eslint-config-typescript/compare/v2.0.0...v3.0.0)
+
+This release contains **breaking changes**
+
+* Update dependencies
+* Introduce `overrides` in configurations that are exclusive to `typescript`
+  * This requires an upgrade to eslint 6.0.0 to support `extends` in `overrides` 
+
 # v2.0.0
 [link](https://github.com/weirdpattern/eslint-config-typescript/compare/v1.1.0...v2.0.0)
 

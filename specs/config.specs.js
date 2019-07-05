@@ -71,7 +71,22 @@ describe("config", () => {
     const config = require("../index");
 
     expect(config).toBeDefined();
-    expect(config.extends).toContain("eslint:recommended");
-    expect(config.extends).toContain("plugin:@typescript-eslint/recommended");
+    expect(config).toMatchInlineSnapshot(`
+      Object {
+        "overrides": Array [
+          Object {
+            "extends": Array [
+              "eslint:recommended",
+              "plugin:@typescript-eslint/eslint-recommended",
+              "plugin:@typescript-eslint/recommended",
+            ],
+            "files": Array [
+              "*.ts",
+              "*.tsx",
+            ],
+          },
+        ],
+      }
+    `);
   });
 });
