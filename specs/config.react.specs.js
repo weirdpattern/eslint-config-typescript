@@ -68,6 +68,12 @@ describe("config", () => {
     const config = require("../react");
 
     expect(config).toBeDefined();
-    expect(config.extends).toContain("plugin:react/recommended");
+    expect(config).toMatchInlineSnapshot(`
+      Object {
+        "extends": Array [
+          "plugin:react/recommended",
+        ],
+      }
+    `);
   });
 });
